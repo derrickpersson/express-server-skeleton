@@ -1,0 +1,16 @@
+#Private Set Up files
+.env
+
+#NPM Files
+node_modules/
+npm-debug.log
+
+#Generated files
+dist/
+coverage/
+logs/*
+
+#Misc
+notes.md
+.vscode
+.DS_Store

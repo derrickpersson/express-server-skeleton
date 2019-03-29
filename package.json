@@ -1,0 +1,76 @@
+{
+  "name": "express-skeleton",
+  "version": "0.1.0",
+  "description": "Middle weight express skeleton starter template",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "watch": "nodemon --exec npm restart",
+    "restart": "rimraf dist && npm run build && npm run start",
+    "start": "node dist/index.js",
+    "test": "npm run build && jest --coverage",
+    "db": "knex --knexfile ./db/knexfile.js"
+  },
+  "engines": {
+    "node": "9.x"
+  },
+  "keywords": [
+    "express",
+    "starter",
+    "skeleton",
+    "template"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-healthcheck": "^0.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.14.6",
+    "knex-logger": "^0.1.0",
+    "lodash.merge": "^4.6.1",
+    "mixpanel": "^0.10.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.4.1",
+    "regenerator-runtime": "^0.13.2",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.5.0",
+    "jest": "^24.5.0",
+    "nodemon": "^1.18.9",
+    "rimraf": "^2.6.3",
+    "supertest": "^3.4.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "rootDir": "./dist",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
